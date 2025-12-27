@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card upload-card">
+        <h2>Sınav Sonuçlarını Yükle</h2>
+        <p>Optik okuyucudan alınan .txt dosyasını yükleyin.</p>
+
+        <div class="upload-zone">
+            <input type="file" (change)="onFileSelected($event)" accept=".txt" />
+            <p *ngIf="selectedFile">Seçilen Dosya: {{ selectedFile.name }}</p>
+        </div>
+
+        <!-- Simple Config Configurator -->
+        <div class="config-section">
+            <h3>Ayrıştırma Ayarları</h3>
+            <div class="form-group">
+                <label>Öğrenci No Başlangıç</label>
+                <input type="number" [(ngModel)]="parserConfig.studentNoStart" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Öğrenci No Uzunluk</label>
+                <input type="number" [(ngModel)]="parserConfig.studentNoLength" class="form-control">
+            </div>
+        </div>
+
+        <button class="btn btn-primary w-100" (click)="upload()" [disabled]="isUploading || !selectedFile">
+            {{ isUploading ? 'Analiz Ediliyor...' : 'Yükle ve Analiz Et' }}
+        </button>
+
+        <div *ngIf="message" class="success-msg">
+            {{ message }}
+        </div>
+    </div>
+</div>

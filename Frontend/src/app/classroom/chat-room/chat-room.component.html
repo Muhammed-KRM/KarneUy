@@ -1,0 +1,28 @@
+<div class="chat-container">
+    <!-- Header -->
+    <div class="chat-header">
+        <button class="back-btn" routerLink="/home">⬅</button>
+        <div class="chat-info">
+            <h3>{{ chatName }}</h3>
+            <span>{{ messages.length }} mesaj</span>
+        </div>
+    </div>
+
+    <!-- Messages Area -->
+    <div class="messages-area">
+        <div *ngFor="let msg of messages" class="message-bubble" [ngClass]="{'me': msg.isMe, 'other': !msg.isMe}">
+            <div class="bubble-content">
+                <span *ngIf="!msg.isMe" class="sender-name">{{ msg.senderName }}</span>
+                <p>{{ msg.content }}</p>
+                <span class="timestamp">{{ msg.sentAt | date:'HH:mm' }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+        <input type="text" class="chat-input" placeholder="Mesaj yazın..." [(ngModel)]="newMessage"
+            (keyup.enter)="sendMessage()">
+        <button class="btn-send" (click)="sendMessage()">➤</button>
+    </div>
+</div>

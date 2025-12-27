@@ -1,0 +1,119 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Full mobile height */
+    background-color: #E5DDD5;
+    /* WhatsApp-like beige bg */
+}
+
+.chat-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.messages-area {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.message-bubble {
+    max-width: 70%;
+    margin-bottom: 0.5rem;
+    display: flex;
+}
+
+.bubble-content {
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
+}
+
+/* My Messages (Right, Green) */
+.message-bubble.me {
+    align-self: flex-end;
+}
+
+.message-bubble.me .bubble-content {
+    background-color: #DCF8C6;
+    /* Classic Chat Green */
+    color: black;
+    border-top-right-radius: 0;
+}
+
+/* Other Messages (Left, White) */
+.message-bubble.other {
+    align-self: flex-start;
+}
+
+.message-bubble.other .bubble-content {
+    background-color: white;
+    color: black;
+    border-top-left-radius: 0;
+}
+
+.sender-name {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    /* Blue for names */
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.timestamp {
+    display: block;
+    font-size: 0.7rem;
+    color: #999;
+    text-align: right;
+    margin-top: 0.2rem;
+}
+
+/* Input Area */
+.input-area {
+    padding: 0.5rem;
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+.btn-send {
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

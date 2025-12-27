@@ -1,0 +1,42 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color-primary);
+    /* Blue Header Background Effect */
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--color-bg-main);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-text-main);
+}
+
+.login-header h2 {
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.error-msg {
+    color: var(--color-error);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,26 @@
+<div class="editor-card">
+    <h3>Soru Paylaş</h3>
+
+    <textarea [(ngModel)]="content" placeholder="Sorunuzu buraya yazın..." rows="4">
+  </textarea>
+
+    <div class="media-area">
+        <div *ngIf="previewUrl" class="preview">
+            <img [src]="previewUrl" alt="Preview">
+            <button class="remove-btn" (click)="selectedFile=null; previewUrl=null; uploadedUrl=null">✕</button>
+        </div>
+
+        <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" hidden>
+
+        <button class="icon-btn" (click)="fileInput.click()">
+            📷 Fotoğraf Ekle
+        </button>
+    </div>
+
+    <div class="actions">
+        <span *ngIf="isUploading">Yükleniyor...</span>
+        <button class="post-btn" (click)="submit()" [disabled]="isSubmitting || isUploading">
+            {{ isSubmitting ? 'Paylaşılıyor...' : 'Paylaş' }}
+        </button>
+    </div>
+</div>

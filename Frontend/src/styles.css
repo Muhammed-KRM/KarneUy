@@ -1,0 +1,77 @@
+/* Johannes Itten Analog Color Scheme */
+:root {
+  /* Ana Analog Palet */
+  --color-primary: #1F4FD8;       /* Mavi - Header, Info */
+  --color-secondary: #1FA4A9;     /* Mavi-Yeşil - Active Menu, Sub-actions */
+  --color-accent: #2FA84F;        /* Yeşil - Primary Actions, Success */
+
+  /* Nötrler */
+  --color-bg-main: #FAFAFA;       /* Kırık Beyaz - Main Background */
+  --color-bg-card: #ECECEC;       /* Açık Gri - Card Background */
+  --color-text-main: #2E2E2E;     /* Koyu Gri - Main Text */
+  --color-text-light: #FAFAFA;    /* Light text on primary bg */
+  --color-border: #E0E0E0;
+
+  /* Durumlar */
+  --color-success: #2FA84F;
+  --color-warning: #FFA000;
+  --color-error: #D32F2F;
+
+  /* Typography Defaults */
+  --font-family-base: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --spacing-base: 1rem;
+  --border-radius: 8px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Common Utilities */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.card {
+  background-color: var(--color-bg-card);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+

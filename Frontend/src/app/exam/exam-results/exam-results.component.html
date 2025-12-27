@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card result-card">
+        <h2>Sınav Sonuçlarım</h2>
+
+        <div *ngIf="loading" class="loading">Yükleniyor...</div>
+
+        <div class="table-responsive" *ngIf="!loading">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sınav Tarihi</th>
+                        <th>Sınav Adı</th>
+                        <th>Puan</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let res of results">
+                        <td>{{ res.date | date:'shortDate' }}</td>
+                        <td>{{ res.examName }}</td>
+                        <td>
+                            <span class="score-badge" [ngClass]="{'good': res.score >= 70, 'mid': res.score < 70}">
+                                {{ res.score | number:'1.0-0' }}
+                            </span>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-primary" (click)="downloadReportWithId(res.examId)">
+                                📄 Karne İndir
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div *ngIf="results.length === 0" class="empty">
+                Henüz sınav sonucu yok.
+            </div>
+        </div>
+    </div>
+</div>

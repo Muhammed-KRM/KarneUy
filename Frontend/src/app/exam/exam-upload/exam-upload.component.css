@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.upload-card {
+    width: 100%;
+    max-width: 500px;
+}
+
+.upload-zone {
+    border: 2px dashed var(--color-secondary);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    background-color: #F9F9F9;
+}
+
+.success-msg {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #E8F5E9;
+    color: var(--color-success);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.config-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #EEE;
+    border-radius: 4px;
+}

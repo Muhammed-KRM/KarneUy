@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="header-action">
+        <h2>Sınıflarım</h2>
+        <button class="btn btn-primary" (click)="createClass()">+ Yeni Sınıf</button>
+    </div>
+
+    <div class="class-grid">
+        <div class="card class-card" *ngFor="let cls of classes">
+            <div class="card-header">
+                <h3>{{ cls.name }}</h3>
+                <span class="badge">Kod: {{ cls.joinCode }}</span>
+            </div>
+            <div class="card-actions">
+                <button class="btn btn-secondary w-100" (click)="openChat(cls.id)">Sohbete Git 💬</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="layout-container">
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="logo-area">
+            <button class="menu-btn" (click)="toggleMenu()">☰</button>
+            <h1>Akademik Analiz</h1>
+        </div>
+        <div class="user-area">
+            <app-notification-menu></app-notification-menu>
+            <span>{{ currentUser?.fullName || 'Misafir' }}</span>
+            <button class="btn btn-secondary btn-sm" (click)="logout()">Çıkış</button>
+        </div>
+    </header>
+
+    <div class="main-body">
+        <!-- SIDEBAR (Mobile Friendly) -->
+        <aside class="sidebar" [class.open]="sideMenuOpen">
+            <nav>
+                <ul>
+                    <li class="active"><a href="#">🏠 Ana Sayfa</a></li>
+                    <li><a href="#">📚 Sınıflarım</a></li>
+                    <li><a href="#">📝 Sınav Yükle</a></li>
+                    <li><a href="#">⚙️ Ayarlar</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="content-area">
+            <!-- Share Question -->
+            <app-question-editor (questionCreated)="onQuestionCreated()"></app-question-editor>
+
+            <!-- Social Feed -->
+            <app-social-feed #feed></app-social-feed>
+
+            <div class="card welcome-card">
+                <h3>Hoş Geldiniz!</h3>
+                <p>Hızlı menüden işleminizi seçebilirsiniz.</p>
+
+                <div class="action-grid">
+                    <div class="card action-item">
+                        <h4>Yeni Sınav</h4>
+                        <p>Optik form yükleyin.</p>
+                        <button class="btn btn-primary">Yükle</button>
+                    </div>
+                    <div class="card action-item">
+                        <h4>Sınıflar</h4>
+                        <p>Öğrenci listelerini yönetin.</p>
+                        <button class="btn btn-secondary">Yönet</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

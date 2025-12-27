@@ -1,0 +1,91 @@
+.notification-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.bell-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    color: var(--color-text-light);
+    /* Assuming used in header */
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-error);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.menu-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.8rem;
+    font-weight: bold;
+}
+
+.menu-items {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    padding: 1rem;
+    border-bottom: 1px solid #EEE;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.notification-item:hover {
+    background-color: #FAFAFA;
+}
+
+.notification-item.alert {
+    border-left: 4px solid var(--color-error);
+}
+
+.notification-item.success {
+    border-left: 4px solid var(--color-success);
+}
+
+.notification-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+}
+
+.close-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: underline;
+}
+
+.empty-state {
+    padding: 2rem;
+    text-align: center;
+    color: #999;
+}

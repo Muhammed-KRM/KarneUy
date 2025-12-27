@@ -1,0 +1,35 @@
+<div class="feed-container">
+    <div class="feed-header">
+        <button [class.active]="mode === 'home'" (click)="toggleMode('home')">Takip Ettiklerim</button>
+        <button [class.active]="mode === 'explore'" (click)="toggleMode('explore')">Keşfet</button>
+    </div>
+
+    <div *ngIf="loading" class="loading">Yükleniyor...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+
+    <div *ngIf="!loading && feed.length === 0" class="empty">
+        <p>Henüz içerik yok.</p>
+        <p *ngIf="mode === 'home'">Yeni kişileri takip edin veya keşfete bakın.</p>
+    </div>
+
+    <div class="feed-list" *ngIf="feed.length > 0">
+        <div class="post-card" *ngFor="let q of feed">
+            <div class="post-header">
+                <strong>{{ q.user?.fullName || 'Kullanıcı' }}</strong>
+                <span class="date">{{ q.createdAt | date:'short' }}</span>
+                <span class="badge" *ngIf="q.lesson">{{ q.lesson?.name }}</span>
+            </div>
+
+            <div class="post-content">
+                <p>{{ q.content }}</p>
+                <img *ngIf="q.imageUrl" [src]="q.imageUrl" class="post-image" alt="Question Image">
+            </div>
+
+            <div class="post-actions">
+                <button>❤️ Beğen</button>
+                <button>💬 Yorum Yap</button>
+                <button>🔖 Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>

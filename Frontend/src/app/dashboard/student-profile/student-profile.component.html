@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="card profile-card">
+        <h2>Öğrenci Analizi</h2>
+
+        <div *ngIf="loading" class="loading">Veriler yükleniyor...</div>
+
+        <div *ngIf="!loading && noData" class="empty">
+            <p>Henüz kayıtlı sınav sonucunuz bulunmamaktadır.</p>
+        </div>
+
+        <div class="chart-container" [hidden]="loading || noData">
+            <canvas id="scoreType"></canvas>
+        </div>
+    </div>
+</div>

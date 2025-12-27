@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+*.user
+*.lock.json
+node_modules/
+dist/
+.angular/
+.idea/
+*.log

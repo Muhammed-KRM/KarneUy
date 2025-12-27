@@ -1,0 +1,27 @@
+<div class="notification-wrapper">
+    <button class="bell-btn" (click)="toggle()">
+        🔔
+        <span *ngIf="notifications.length > 0" class="badge">
+            {{ notifications.length }}
+        </span>
+    </button>
+
+    <div class="dropdown-menu" *ngIf="isOpen">
+        <div class="menu-header">Bildirimler</div>
+
+        <div class="menu-items">
+            <div *ngIf="notifications.length === 0" class="empty-state">
+                Yeni bildirim yok.
+            </div>
+
+            <div *ngFor="let note of notifications" class="notification-item" [ngClass]="note.type.toLowerCase()">
+                <div class="note-content">
+                    <strong>{{ note.title }}</strong>
+                    <p>{{ note.message }}</p>
+                    <small>{{ note.createdAt | date:'short' }}</small>
+                </div>
+                <button class="close-btn" (click)="markRead(note.id)">Okundu işaretle</button>
+            </div>
+        </div>
+    </div>
+</div>
